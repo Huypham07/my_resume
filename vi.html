@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pham Huu Huy - CV</title>
+    <style>
+      @page {
+        size: A4;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0.5in;
+        }
+        body {
+          width: 210mm;
+          height: 297mm;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          box-shadow: none;
+          width: 100%;
+          height: auto;
+          padding: 0mm;
+          margin: 0;
+        }
+      }
+
+      a {
+        color: #333;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .container {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        background: white;
+        padding: 12mm;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+        color: #333;
+        font-size: 28px;
+      }
+
+      .header h2 {
+        margin: 4px 0;
+        color: #6c6c6c;
+        font-weight: normal;
+        font-size: 18px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 15px;
+        font-size: 13px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        color: #333;
+        font-weight: bolder;
+        font-size: 16px;
+      }
+
+      .objective-content {
+        padding: 0 10px;
+        font-size: 14px;
+        text-align: justify;
+      }
+
+      .education-item,
+      .project-item {
+        margin-bottom: 12px;
+        padding: 0 10px;
+        font-size: 14px;
+      }
+
+      .education-header,
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+
+      .project-title {
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+
+      .project-role {
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .feature-list {
+        list-style-type: circle;
+        padding-left: 25px;
+        margin: 3px 0;
+        font-size: 14px;
+      }
+
+      .skills-container {
+        padding: 0 10px;
+        font-size: 14px;
+      }
+
+      .skill-category {
+        margin-bottom: 8px;
+      }
+
+      .skill-category span:first-child {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .time {
+        font-style: italic;
+        font-weight: normal;
+      }
+
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #e2e2e2;
+        margin-bottom: 10px;
+      }
+
+      .bolder-line {
+        width: 100%;
+        height: 1px;
+        background-color: #333;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>PHAM HUU HUY</h1>
+        <h2>Software Engineer</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.5562 12.9062L16.1007 13.359C16.1007 13.359 15.0181 14.4355 12.0631 11.4972C9.10812 8.55901 10.1907 7.48257 10.1907 7.48257L10.4775 7.19738C11.1841 6.49484 11.2507 5.36691 10.6342 4.54348L9.37326 2.85908C8.61028 1.83992 7.13596 1.70529 6.26145 2.57483L4.69185 4.13552C4.25823 4.56668 3.96765 5.12559 4.00289 5.74561C4.09304 7.33182 4.81071 10.7447 8.81536 14.7266C13.0621 18.9492 17.0468 19.117 18.6763 18.9651C19.1917 18.9171 19.6399 18.6546 20.0011 18.2954L21.4217 16.883C22.3806 15.9295 22.1102 14.2949 20.8833 13.628L18.9728 12.5894C18.1672 12.1515 17.1858 12.2801 16.5562 12.9062Z"
+                fill="#333" />
+            </svg>
+            <span>0867805611</span>
+          </div>
+          <div class="contact-item">
+            <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M2.272 6.365C2 6.9 2 7.6 2 9v6c0 1.4 0 2.1.272 2.635a2.5 2.5 0 0 0 1.093 1.092C3.9 19 4.6 19 6 19h12c1.4 0 2.1 0 2.635-.273a2.5 2.5 0 0 0 1.092-1.092C22 17.1 22 16.4 22 15V9c0-1.4 0-2.1-.273-2.635a2.5 2.5 0 0 0-1.092-1.093C20.1 5 19.4 5 18 5H6c-1.4 0-2.1 0-2.635.272a2.5 2.5 0 0 0-1.093 1.093zM4.647 7h14.706a.5.5 0 0 1 .278.916l-7.075 4.732a1 1 0 0 1-1.112 0L4.369 7.916A.5.5 0 0 1 4.647 7z"
+                fill="#333" />
+            </svg>
+            <span>phamhuy.phh71@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <svg fill="#333" width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z" />
+            </svg>
+            <a href="https://facebook.com/huypham07.01" style="text-decoration: none" target="_blank">huypham07.01</a>
+          </div>
+          <div class="contact-item">
+            <svg width="14px" height="14px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="#333"
+                d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24
+	C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24
+	C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z" />
+            </svg>
+            <span>Hanoi, Vietnam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">OBJECTIVE</div>
+        <div class="bolder-line"></div>
+        <div class="objective-content">
+          <p>
+            Over the next five years, my goal is to become a well-established Software Engineer, making meaningful
+            contributions to large-scale enterprise projects. I seek opportunities to continuously collaborate with
+            industry experts and peers to expand my knowledge and skills.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">EDUCATION</div>
+        <div class="bolder-line"></div>
+        <div class="education-item">
+          <div class="education-header">
+            <span>VNU University of Engineering and Technology (VNU-UET)</span>
+            <span class="time">Sep. 2022 - Now</span>
+          </div>
+          <div>Major: Computer Science</div>
+          <div>CPA: 3.44/4.0</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">SKILLS</div>
+        <div class="bolder-line"></div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <span>Languages:</span>
+            <span>Vietnamese, English</span>
+          </div>
+          <div class="skill-category">
+            <span>Programming languages:</span>
+            <span>Java, TypeScript</span>
+          </div>
+          <div class="skill-category">
+            <span>Tools & Technologies:</span>
+            <span>Git, Docker, SQL, NoSQL, ReactJS, Next.js, Spring Boot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">PROJECTS</div>
+        <div class="bolder-line"></div>
+        <div class="project-item">
+          <div class="project-title">
+            <span>LexiHelp – Web Extension Supporting People with Dyslexia and ADHD</span>
+            <span class="time">Mar. 2025 - May. 2025</span>
+          </div>
+          <div class="project-role">Team Leader</div>
+          <ul class="feature-list">
+            <li>Course project</li>
+            <li>A browser extension designed to assist individuals with dyslexia and ADHD.</li>
+            <li>
+              Key Features:
+              <ul>
+                <li>Customizable fonts, background colors, and themes for improved readability.</li>
+                <li>Removal of distracting web page elements to support focus.</li>
+                <li>Text-to-speech functionality.</li>
+                <li>Smart summarization of long content.</li>
+              </ul>
+            </li>
+            <li>Technologies: TypeScript, React, Tailwind CSS, Webpack, FastAPI.</li>
+            <li>
+              Source Code:
+              <a href="https://github.com/Huypham07/LexiHelp" target="_blank">github.com/Huypham07/LexiHelp</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="line"></div>
+        <div class="project-item">
+          <div class="project-title">
+            <span>Airline Ticket Booking Website</span>
+            <span class="time">Oct. 2024 - Dec. 2024</span>
+          </div>
+          <div class="project-role">Front-end Developer</div>
+          <ul class="feature-list">
+            <li>Course project</li>
+            <li>An airline ticket booking web application.</li>
+            <li>
+              Key Features:
+              <ul>
+                <li>Flight search and ticket booking.</li>
+                <li>Ticket management and information lookup.</li>
+                <li>Online check-in functionality.</li>
+              </ul>
+            </li>
+            <li>Technologies: TypeScript, Next.js, Tailwind CSS, Redux.</li>
+            <li>
+              Source Code:
+              <a href="https://github.com/Huypham07/int3306-55-web-project-frontend" target="_blank"
+                >github.com/Huypham07/int3306-55-web-project-frontend</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="project-item">
+          <div class="project-title">
+            <span>Optimizing a URL Shortening Web System</span>
+            <span class="time">Sep. 2024 - Nov. 2024</span>
+          </div>
+          <div class="project-role">Back-end Developer</div>
+          <ul class="feature-list">
+            <li>Course project</li>
+            <li>
+              Built a microservices-based URL shortening platform with performance optimization for high concurrent
+              traffic.
+            </li>
+            <li>
+              Key Features:
+              <ul>
+                <li>High-performance URL shortening service.</li>
+                <li>
+                  Optimized for concurrent user access with microservices architecture (Kafka, Redis, sharding Database,
+                  gateway routing and load balancing).
+                </li>
+                <li>Docker-based deployment for consistency and portability.</li>
+              </ul>
+            </li>
+            <li>Technologies: JavaScript, Kafka, Redis, PostgreSQL, Docker.</li>
+            <li>
+              Source Code:
+              <a href="https://github.com/Huypham07/Shorten_URL" target="_blank">github.com/Huypham07/Shorten_URL</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="line"></div>
+        <div class="project-item">
+          <div class="project-title">
+            <span>Movie Ticket Booking Mobile App</span>
+            <span class="time">Apr. 2024 - June. 2024</span>
+          </div>
+          <div class="project-role">Full Stack Developer</div>
+          <ul class="feature-list">
+            <li>Course project</li>
+            <li>An android application that enables users to book movie tickets.</li>
+            <li>
+              Key Features:
+              <ul>
+                <li>Browse movies and select showtimes.</li>
+                <li>Book tickets, choose seats, and generate QR codes for entry.</li>
+                <li>Route guidance to selected cinema.</li>
+                <li>Rate movies and provide feedback.</li>
+                <li>Basic chat functionality with administrators.</li>
+                <li>Personalized movie recommendations.</li>
+              </ul>
+            </li>
+            <li>Technologies: Java (Android), Firebase.</li>
+            <li>
+              Source Code:
+              <a href="https://github.com/Huypham07/MobDev_Nhom03_Asg02" target="_blank"
+                >github.com/Huypham07/MobDev_Nhom03_Asg02</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

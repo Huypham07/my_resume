@@ -7,12 +7,13 @@
     <style>
       @page {
         size: A4;
+        margin: 0;
       }
 
       @media print {
         @page {
           size: A4;
-          margin: 0.5in;
+          margin: 0;
         }
         body {
           width: 210mm;
@@ -21,14 +22,17 @@
           print-color-adjust: exact !important;
           margin: 0;
           padding: 0;
+          background-color: white !important;
         }
 
         .container {
           box-shadow: none;
-          width: 100%;
-          height: auto;
-          padding: 0mm;
+          width: 210mm;
+          min-height: 297mm;
+          padding: 12mm !important; /* Giữ padding 12px khi in */
           margin: 0;
+          box-sizing: border-box;
+          background: white;
         }
       }
 
@@ -37,13 +41,13 @@
       }
 
       body {
-        font-family: "Arial", sans-serif;
-        line-height: 1.6;
+        font-family: "Times New Roman", "Arial", sans-serif;
+        line-height: 1.4;
         margin: 0;
         padding: 0;
         background-color: #f5f5f5;
         color: #333;
-        font-weight: 500;
+        font-weight: normal;
       }
 
       .container {
@@ -53,22 +57,22 @@
         background: white;
         padding: 12mm;
         box-sizing: border-box;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
       }
 
       .header {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
       }
 
       .header h1 {
         margin: 0;
         color: #333;
-        font-size: 28px;
+        font-size: 24px;
       }
 
       .header h2 {
-        margin: 4px 0;
+        margin: 0;
         color: #6c6c6c;
         font-weight: normal;
         font-size: 18px;
@@ -79,8 +83,8 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 15px;
-        font-size: 13px;
+        margin-bottom: 12px;
+        font-size: 15px;
       }
 
       .contact-item {
@@ -90,26 +94,30 @@
       }
 
       .section {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
 
       .section-title {
         color: #333;
         font-weight: bolder;
-        font-size: 16px;
+        font-size: 20px;
       }
 
-      .objective-content {
-        padding: 0 10px;
-        font-size: 14px;
-        text-align: justify;
+      .subsection-title {
+        color: #333;
+        font-weight: bolder;
+        font-size: 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        padding-right: 20px;
       }
 
       .education-item,
       .project-item {
         margin-bottom: 12px;
-        padding: 0 10px;
-        font-size: 14px;
+        padding: 0 20px;
+        font-size: 16px;
       }
 
       .education-header,
@@ -121,31 +129,22 @@
 
       .project-title {
         font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px;
-      }
-
-      .project-role {
-        font-style: italic;
-        font-weight: bold;
-        margin-bottom: 5px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width: 100%;
+        /* margin-bottom: 5px; */
       }
 
       .feature-list {
         list-style-type: circle;
-        padding-left: 25px;
-        margin: 3px 0;
-        font-size: 14px;
+        padding-left: 40px;
+        margin: 0;
+        font-size: 16px;
       }
 
       .skills-container {
-        padding: 0 10px;
-        font-size: 14px;
-      }
-
-      .skill-category {
-        margin-bottom: 8px;
+        padding: 0 20px;
+        font-size: 16px;
       }
 
       .skill-category span:first-child {
@@ -154,8 +153,10 @@
       }
 
       .time {
-        font-style: italic;
+        /* font-style: italic; */
         font-weight: normal;
+        text-align: right;
+        font-size: 16px;
       }
 
       .line {
@@ -171,13 +172,19 @@
         background-color: #333;
         margin-bottom: 10px;
       }
+
+      .role {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
       <div class="header">
-        <h1>PHAM HUU HUY</h1>
+        <h1>PHẠM HỮU HUY</h1>
         <h2>Software Engineer</h2>
         <div class="contact-info">
           <div class="contact-item">
@@ -213,175 +220,127 @@
 	C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24
 	C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z" />
             </svg>
-            <span>Hanoi, Vietnam</span>
+            <span>Hà Nội, Việt Nam</span>
           </div>
         </div>
       </div>
 
       <div class="section">
-        <div class="section-title">OBJECTIVE</div>
-        <div class="bolder-line"></div>
-        <div class="objective-content">
-          <p>
-            Over the next five years, my goal is to become a well-established Software Engineer, making meaningful
-            contributions to large-scale enterprise projects. I seek opportunities to continuously collaborate with
-            industry experts and peers to expand my knowledge and skills.
-          </p>
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="section-title">EDUCATION</div>
+        <div class="section-title">HỌC VẤN</div>
         <div class="bolder-line"></div>
         <div class="education-item">
           <div class="education-header">
-            <span>VNU University of Engineering and Technology (VNU-UET)</span>
-            <span class="time">Sep. 2022 - Now</span>
+            <span>Trường Đại học Công nghệ (VNU-UET)</span>
+            <span class="time">09/2022 - 06/2026 (Dự kiến)</span>
           </div>
-          <div>Major: Computer Science</div>
-          <div>CPA: 3.44/4.0</div>
+          <div>Chuyên ngành: Khoa học Máy tính</div>
+          <div>CPA: 3.48/4.0</div>
         </div>
       </div>
 
       <div class="section">
-        <div class="section-title">SKILLS</div>
+        <div class="section-title">KỸ NĂNG</div>
         <div class="bolder-line"></div>
         <div class="skills-container">
           <div class="skill-category">
-            <span>Languages:</span>
-            <span>Vietnamese, English</span>
+            <span>Ngôn ngữ:</span>
+            <span>Tiếng Việt, Tiếng Anh</span>
           </div>
           <div class="skill-category">
-            <span>Programming languages:</span>
-            <span>Java, TypeScript</span>
+            <span>Ngôn ngữ lập trình:</span>
+            <span>Java, TypeScript, Python</span>
           </div>
           <div class="skill-category">
-            <span>Tools & Technologies:</span>
-            <span>Git, Docker, SQL, NoSQL, ReactJS, Next.js, Spring Boot</span>
+            <span>Các công nghệ đã làm việc:</span>
+            <span>Git, Docker, SQL, NoSQL, HTML, CSS, ReactJS, Next.js, Spring Boot</span>
           </div>
         </div>
       </div>
 
       <div class="section">
-        <div class="section-title">PROJECTS</div>
+        <div class="section-title">KINH NGHIỆM</div>
         <div class="bolder-line"></div>
-        <div class="project-item">
-          <div class="project-title">
-            <span>LexiHelp – Web Extension Supporting People with Dyslexia and ADHD</span>
-            <span class="time">Mar. 2025 - May. 2025</span>
-          </div>
-          <div class="project-role">Team Leader</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>A browser extension designed to assist individuals with dyslexia and ADHD.</li>
-            <li>
-              Key Features:
-              <ul>
-                <li>Customizable fonts, background colors, and themes for improved readability.</li>
-                <li>Removal of distracting web page elements to support focus.</li>
-                <li>Text-to-speech functionality.</li>
-                <li>Smart summarization of long content.</li>
-              </ul>
-            </li>
-            <li>Technologies: TypeScript, React, Tailwind CSS, Webpack, FastAPI.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/LexiHelp" target="_blank">github.com/Huypham07/LexiHelp</a>
-            </li>
-          </ul>
-        </div>
+        <ul style="padding-left: 16px">
+          <li>
+            <div class="subsection">
+              <div class="subsection-title">
+                <span>Viettel Digital Talent</span>
+                <span class="role">Software Engineer</span>
+                <span class="time" style="padding-right: 20px">04/2025 - 06/2025</span>
+              </div>
+              <div class="project-item">
+                <div class="project-title">
+                  <span>Hệ thống thu thập dữ liệu báo chí</span>
+                </div>
+                <ul class="feature-list">
+                  <li>
+                    Phát triển hệ thống microservices tự động thu thập dữ liệu báo chí từ các trang báo của Việt Nam.
+                  </li>
+                  <li>
+                    Sử dụng công nghệ lưu trữ và xử lý phân tán, áp dụng LLM để sinh luật trích xuất, tích hợp Search
+                    Engine (keyword, semantic search).
+                  </li>
+                  <li>
+                    Công nghệ: Spring Boot, Kafka, Redis, MongoDB, Elasticsearch, Promethus, Docker.
+                  </li>
+                  <li>
+                    Mã nguồn:
+                    <a href="https://github.com/Huypham07/LLM-News-Crawler" target="_blank"
+                      >github.com/Huypham07/LLM-News-Crawler</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="subsection">
+              <div class="subsection-title">Dự án cá nhân</div>
+              <div class="project-item">
+                <div class="project-title">
+                  <span>Hệ thống rút gọn URL</span>
+                  <div class="role">Back-end Developer</div>
+                  <span class="time">10/2024 - 11/2024</span>
+                </div>
+                <ul class="feature-list">
+                  <li>
+                    Phát triển hệ thống microservices rút gọn URL với hiệu suất cao áp dụng các công nghệ lưu trữ và xử
+                    lý phân tán.
+                  </li>
+                  <li>Công nghệ: Express, Kafka, Redis, PostgreSQL, Docker.</li>
+                  <li>
+                    Mã nguồn:
+                    <a href="https://github.com/Huypham07/Shorten_URL" target="_blank"
+                      >github.com/Huypham07/Shorten_URL</a
+                    >
+                  </li>
+                </ul>
+              </div>
 
-        <div class="line"></div>
-        <div class="project-item">
-          <div class="project-title">
-            <span>Airline Ticket Booking Website</span>
-            <span class="time">Oct. 2024 - Dec. 2024</span>
-          </div>
-          <div class="project-role">Front-end Developer</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>An airline ticket booking web application.</li>
-            <li>
-              Key Features:
-              <ul>
-                <li>Flight search and ticket booking.</li>
-                <li>Ticket management and information lookup.</li>
-                <li>Online check-in functionality.</li>
-              </ul>
-            </li>
-            <li>Technologies: TypeScript, Next.js, Tailwind CSS, Redux.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/int3306-55-web-project-frontend" target="_blank"
-                >github.com/Huypham07/int3306-55-web-project-frontend</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="project-item">
-          <div class="project-title">
-            <span>Optimizing a URL Shortening Web System</span>
-            <span class="time">Sep. 2024 - Nov. 2024</span>
-          </div>
-          <div class="project-role">Back-end Developer</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>
-              Built a microservices-based URL shortening platform with performance optimization for high concurrent
-              traffic.
-            </li>
-            <li>
-              Key Features:
-              <ul>
-                <li>High-performance URL shortening service.</li>
-                <li>
-                  Optimized for concurrent user access with microservices architecture (Kafka, Redis, sharding Database,
-                  gateway routing and load balancing).
-                </li>
-                <li>Docker-based deployment for consistency and portability.</li>
-              </ul>
-            </li>
-            <li>Technologies: JavaScript, Kafka, Redis, PostgreSQL, Docker.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/Shorten_URL" target="_blank">github.com/Huypham07/Shorten_URL</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="line"></div>
-        <div class="project-item">
-          <div class="project-title">
-            <span>Movie Ticket Booking Mobile App</span>
-            <span class="time">Apr. 2024 - June. 2024</span>
-          </div>
-          <div class="project-role">Full Stack Developer</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>An android application that enables users to book movie tickets.</li>
-            <li>
-              Key Features:
-              <ul>
-                <li>Browse movies and select showtimes.</li>
-                <li>Book tickets, choose seats, and generate QR codes for entry.</li>
-                <li>Route guidance to selected cinema.</li>
-                <li>Rate movies and provide feedback.</li>
-                <li>Basic chat functionality with administrators.</li>
-                <li>Personalized movie recommendations.</li>
-              </ul>
-            </li>
-            <li>Technologies: Java (Android), Firebase.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/MobDev_Nhom03_Asg02" target="_blank"
-                >github.com/Huypham07/MobDev_Nhom03_Asg02</a
-              >
-            </li>
-          </ul>
-        </div>
+              <div class="line"></div>
+              <div class="project-item">
+                <div class="project-title">
+                  <span>Ứng dụng đặt vé xem phim</span>
+                  <div class="role">Full Stack Developer</div>
+                  <span class="time">04/2024 - 06/2024</span>
+                </div>
+                <ul class="feature-list">
+                  <li>
+                    Phát triển ứng dụng di động đặt vé xem phim cho phép đặt vé xem phim, chọn ghế từ các rạp khác nhau
+                    trên hệ thống. Sinh mã QR cho vé, tìm đường đi đến rạp, đánh giá phim, gợi ý phim cho cá nhân.
+                  </li>
+                  <li>Công nghệ: Java (Android), Firebase.</li>
+                  <li>
+                    Mã nguồn:
+                    <a href="https://github.com/Huypham07/MobDev_Nhom03_Asg02" target="_blank"
+                      >github.com/Huypham07/MobDev_Nhom03_Asg02</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </body>

@@ -7,12 +7,13 @@
     <style>
       @page {
         size: A4;
+        margin: 0;
       }
 
       @media print {
         @page {
           size: A4;
-          margin: 0.5in;
+          margin: 0;
         }
         body {
           width: 210mm;
@@ -21,14 +22,17 @@
           print-color-adjust: exact !important;
           margin: 0;
           padding: 0;
+          background-color: white !important;
         }
 
         .container {
           box-shadow: none;
-          width: 100%;
-          height: auto;
-          padding: 0mm;
+          width: 210mm;
+          min-height: 297mm;
+          padding: 12mm !important; /* Giữ padding 12px khi in */
           margin: 0;
+          box-sizing: border-box;
+          background: white;
         }
       }
 
@@ -37,13 +41,13 @@
       }
 
       body {
-        font-family: "Arial", sans-serif;
-        line-height: 1.6;
+        font-family: "Times New Roman", "Arial", sans-serif;
+        line-height: 1.4;
         margin: 0;
         padding: 0;
         background-color: #f5f5f5;
         color: #333;
-        font-weight: 500;
+        font-weight: normal;
       }
 
       .container {
@@ -53,22 +57,22 @@
         background: white;
         padding: 12mm;
         box-sizing: border-box;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
       }
 
       .header {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
       }
 
       .header h1 {
         margin: 0;
         color: #333;
-        font-size: 28px;
+        font-size: 24px;
       }
 
       .header h2 {
-        margin: 4px 0;
+        margin: 0;
         color: #6c6c6c;
         font-weight: normal;
         font-size: 18px;
@@ -79,8 +83,8 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 15px;
-        font-size: 13px;
+        margin-bottom: 12px;
+        font-size: 15px;
       }
 
       .contact-item {
@@ -90,26 +94,29 @@
       }
 
       .section {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
 
       .section-title {
         color: #333;
         font-weight: bolder;
-        font-size: 16px;
+        font-size: 20px;
       }
 
-      .objective-content {
-        padding: 0 10px;
-        font-size: 14px;
-        text-align: justify;
+      .subsection-title {
+        color: #333;
+        font-weight: bolder;
+        font-size: 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
       }
 
       .education-item,
       .project-item {
         margin-bottom: 12px;
-        padding: 0 10px;
-        font-size: 14px;
+        padding: 0 20px;
+        font-size: 16px;
       }
 
       .education-header,
@@ -121,31 +128,22 @@
 
       .project-title {
         font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px;
-      }
-
-      .project-role {
-        font-style: italic;
-        font-weight: bold;
-        margin-bottom: 5px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width: 100%;
+        /* margin-bottom: 5px; */
       }
 
       .feature-list {
         list-style-type: circle;
-        padding-left: 25px;
-        margin: 3px 0;
-        font-size: 14px;
+        padding-left: 40px;
+        margin: 0;
+        font-size: 16px;
       }
 
       .skills-container {
-        padding: 0 10px;
-        font-size: 14px;
-      }
-
-      .skill-category {
-        margin-bottom: 8px;
+        padding: 0 20px;
+        font-size: 16px;
       }
 
       .skill-category span:first-child {
@@ -154,8 +152,10 @@
       }
 
       .time {
-        font-style: italic;
+        /* font-style: italic; */
         font-weight: normal;
+        text-align: right;
+        font-size: 16px;
       }
 
       .line {
@@ -170,6 +170,12 @@
         height: 1px;
         background-color: #333;
         margin-bottom: 10px;
+      }
+
+      .role {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -219,18 +225,6 @@
       </div>
 
       <div class="section">
-        <div class="section-title">OBJECTIVE</div>
-        <div class="bolder-line"></div>
-        <div class="objective-content">
-          <p>
-            Over the next five years, my goal is to become a well-established Software Engineer, making meaningful
-            contributions to large-scale enterprise projects. I seek opportunities to continuously collaborate with
-            industry experts and peers to expand my knowledge and skills.
-          </p>
-        </div>
-      </div>
-
-      <div class="section">
         <div class="section-title">EDUCATION</div>
         <div class="bolder-line"></div>
         <div class="education-item">
@@ -239,7 +233,7 @@
             <span class="time">Sep. 2022 - Now</span>
           </div>
           <div>Major: Computer Science</div>
-          <div>CPA: 3.44/4.0</div>
+          <div>CPA: 3.48/4.0</div>
         </div>
       </div>
 
@@ -252,8 +246,8 @@
             <span>Vietnamese, English</span>
           </div>
           <div class="skill-category">
-            <span>Programming languages:</span>
-            <span>Java, TypeScript</span>
+            <span>Programming Languages:</span>
+            <span>Java, TypeScript, Python</span>
           </div>
           <div class="skill-category">
             <span>Tools & Technologies:</span>
@@ -263,125 +257,90 @@
       </div>
 
       <div class="section">
-        <div class="section-title">PROJECTS</div>
+        <div class="section-title">EXPERIENCE</div>
         <div class="bolder-line"></div>
-        <div class="project-item">
-          <div class="project-title">
-            <span>LexiHelp – Web Extension Supporting People with Dyslexia and ADHD</span>
-            <span class="time">Mar. 2025 - May. 2025</span>
-          </div>
-          <div class="project-role">Team Leader</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>A browser extension designed to assist individuals with dyslexia and ADHD.</li>
-            <li>
-              Key Features:
-              <ul>
-                <li>Customizable fonts, background colors, and themes for improved readability.</li>
-                <li>Removal of distracting web page elements to support focus.</li>
-                <li>Text-to-speech functionality.</li>
-                <li>Smart summarization of long content.</li>
-              </ul>
-            </li>
-            <li>Technologies: TypeScript, React, Tailwind CSS, Webpack, FastAPI.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/LexiHelp" target="_blank">github.com/Huypham07/LexiHelp</a>
-            </li>
-          </ul>
-        </div>
+        <ul style="padding-left: 16px">
+          <li>
+            <div class="subsection">
+              <div class="subsection-title">
+                <span>Viettel Digital Talent</span>
+                <span class="role">Software Engineer</span>
+                <span class="time" style="padding-right: 20px">Apr. 2025 - Jun. 2025</span>
+              </div>
+              <div class="project-item">
+                <div class="project-title">
+                  <span>News Data Crawling System</span>
+                </div>
+                <ul class="feature-list">
+                  <li>
+                    Developed a microservices system to automatically collect news data from various Vietnamese online
+                    newspapers.
+                  </li>
+                  <li>
+                    Applied distributed storage and processing technologies, integrated LLM to generate extraction
+                    rules, and implemented keyword & semantic search engines.
+                  </li>
+                  <li>Technologies: Spring Boot, Kafka, Redis, MongoDB, Elasticsearch, Prometheus, Docker.</li>
+                  <li>
+                    Source code:
+                    <a href="https://github.com/Huypham07/LLM-News-Crawler" target="_blank">
+                      github.com/Huypham07/LLM-News-Crawler
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="subsection">
+              <div class="subsection-title">Personal Projects</div>
+              <div class="project-item">
+                <div class="project-title">
+                  <span>URL Shortening System</span>
+                  <div class="role">Back-end Developer</div>
+                  <span class="time">Oct. 2024 - Nov. 2024</span>
+                </div>
 
-        <div class="line"></div>
-        <div class="project-item">
-          <div class="project-title">
-            <span>Airline Ticket Booking Website</span>
-            <span class="time">Oct. 2024 - Dec. 2024</span>
-          </div>
-          <div class="project-role">Front-end Developer</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>An airline ticket booking web application.</li>
-            <li>
-              Key Features:
-              <ul>
-                <li>Flight search and ticket booking.</li>
-                <li>Ticket management and information lookup.</li>
-                <li>Online check-in functionality.</li>
-              </ul>
-            </li>
-            <li>Technologies: TypeScript, Next.js, Tailwind CSS, Redux.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/int3306-55-web-project-frontend" target="_blank"
-                >github.com/Huypham07/int3306-55-web-project-frontend</a
-              >
-            </li>
-          </ul>
-        </div>
+                <ul class="feature-list">
+                  <li>
+                    Developed a high-performance microservices system for shortening URLs using distributed
+                    technologies.
+                  </li>
+                  <li>Technologies: Express, Kafka, Redis, PostgreSQL, Docker.</li>
+                  <li>
+                    Source code:
+                    <a href="https://github.com/Huypham07/Shorten_URL" target="_blank">
+                      github.com/Huypham07/Shorten_URL
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-        <div class="line"></div>
-
-        <div class="project-item">
-          <div class="project-title">
-            <span>Optimizing a URL Shortening Web System</span>
-            <span class="time">Sep. 2024 - Nov. 2024</span>
-          </div>
-          <div class="project-role">Back-end Developer</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>
-              Built a microservices-based URL shortening platform with performance optimization for high concurrent
-              traffic.
-            </li>
-            <li>
-              Key Features:
-              <ul>
-                <li>High-performance URL shortening service.</li>
-                <li>
-                  Optimized for concurrent user access with microservices architecture (Kafka, Redis, sharding Database,
-                  gateway routing and load balancing).
-                </li>
-                <li>Docker-based deployment for consistency and portability.</li>
-              </ul>
-            </li>
-            <li>Technologies: JavaScript, Kafka, Redis, PostgreSQL, Docker.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/Shorten_URL" target="_blank">github.com/Huypham07/Shorten_URL</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="line"></div>
-        <div class="project-item">
-          <div class="project-title">
-            <span>Movie Ticket Booking Mobile App</span>
-            <span class="time">Apr. 2024 - June. 2024</span>
-          </div>
-          <div class="project-role">Full Stack Developer</div>
-          <ul class="feature-list">
-            <li>Course project</li>
-            <li>An android application that enables users to book movie tickets.</li>
-            <li>
-              Key Features:
-              <ul>
-                <li>Browse movies and select showtimes.</li>
-                <li>Book tickets, choose seats, and generate QR codes for entry.</li>
-                <li>Route guidance to selected cinema.</li>
-                <li>Rate movies and provide feedback.</li>
-                <li>Basic chat functionality with administrators.</li>
-                <li>Personalized movie recommendations.</li>
-              </ul>
-            </li>
-            <li>Technologies: Java (Android), Firebase.</li>
-            <li>
-              Source Code:
-              <a href="https://github.com/Huypham07/MobDev_Nhom03_Asg02" target="_blank"
-                >github.com/Huypham07/MobDev_Nhom03_Asg02</a
-              >
-            </li>
-          </ul>
-        </div>
+              <div class="line"></div>
+              <div class="project-item">
+                <div class="project-title">
+                  <span>Movie Ticket Booking App</span>
+                  <div class="role">Full Stack Developer</div>
+                  <span class="time">Apr. 2024 - Jun. 2024</span>
+                </div>
+                <ul class="feature-list">
+                  <li>
+                    Built a mobile application allowing users to book movie tickets, choose seats across different
+                    cinemas, generate QR codes for tickets, find cinema routes, rate movies, and receive personalized
+                    recommendations.
+                  </li>
+                  <li>Technologies: Java (Android), Firebase.</li>
+                  <li>
+                    Source code:
+                    <a href="https://github.com/Huypham07/MobDev_Nhom03_Asg02" target="_blank">
+                      github.com/Huypham07/MobDev_Nhom03_Asg02
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </body>
